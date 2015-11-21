@@ -16,8 +16,11 @@ namespace MicroStuff
         {
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
+            
                 .AddJsonFile("appsettings.json")
+                
                 .AddEnvironmentVariables();
+                
             Configuration = builder.Build();
         }
 
@@ -44,8 +47,6 @@ namespace MicroStuff
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            app.UseIISPlatformHandler();
 
             app.UseStaticFiles();
 
